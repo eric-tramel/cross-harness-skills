@@ -1,0 +1,31 @@
+{
+  "name": "eric-cross-harness-skills",
+  "owner": {
+    "name": "Eric Tramel",
+    "email": "eric.tramel@gmail.com"
+  },
+  "description": "Portable agent skills for use across Codex, Claude Code, and other harnesses.",
+  "plugins": [
+    {
+      "name": "cross-harness-skills",
+      "displayName": "Cross Harness Skills",
+      "source": "./plugins/cross-harness-skills",
+      "description": "Portable development skills and conventions for agent harnesses.",
+      "author": {
+        "name": "Eric Tramel",
+        "email": "eric.tramel@gmail.com"
+      },
+      "homepage": "https://github.com/eric-tramel/cross-harness-skills",
+      "repository": "https://github.com/eric-tramel/cross-harness-skills",
+      "license": "MIT",
+      "category": "Productivity",
+      "tags": [
+        "agents",
+        "skills",
+        "codex",
+        "claude-code",
+        "cross-harness"
+      ]
+    }
+  ]
+}

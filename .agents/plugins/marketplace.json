@@ -1,0 +1,20 @@
+{
+  "name": "eric-cross-harness-skills",
+  "interface": {
+    "displayName": "Eric Cross-Harness Skills"
+  },
+  "plugins": [
+    {
+      "name": "cross-harness-skills",
+      "source": {
+        "source": "local",
+        "path": "./plugins/cross-harness-skills"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
