@@ -33,14 +33,34 @@ The repository is organized as a marketplace catalog with one initial plugin:
 
 ## Install
 
+This marketplace is hosted in the public GitHub repository
+`eric-tramel/cross-harness-skills`, so no private repository access is required
+to install it.
+
 ### Claude Code
+
+Install the marketplace and then install the plugin from that marketplace:
 
 ```bash
 claude plugin marketplace add eric-tramel/cross-harness-skills
 claude plugin install cross-harness-skills@eric-cross-harness-skills
 ```
 
-For local testing from this checkout:
+Verify the install:
+
+```bash
+claude plugin list
+claude plugin details cross-harness-skills
+```
+
+Update later:
+
+```bash
+claude plugin marketplace update eric-cross-harness-skills
+claude plugin update cross-harness-skills
+```
+
+For local testing from a checkout of this repository:
 
 ```bash
 claude plugin marketplace add .
@@ -51,19 +71,27 @@ claude plugin install cross-harness-skills@eric-cross-harness-skills
 
 This repo includes a Codex marketplace manifest at `.agents/plugins/marketplace.json` and a plugin manifest at `plugins/cross-harness-skills/.codex-plugin/plugin.json`.
 
-For local testing from this checkout:
-
-```bash
-codex plugin marketplace add .
-```
-
-For remote install:
+Add the marketplace from GitHub:
 
 ```bash
 codex plugin marketplace add eric-tramel/cross-harness-skills
 ```
 
-After adding the marketplace, install or enable `cross-harness-skills` from the Codex plugin UI.
+After adding the marketplace, open the Codex plugin UI, find `Cross Harness Skills` in the `Eric Cross-Harness Skills` marketplace, and install or enable `cross-harness-skills`.
+
+Update later:
+
+```bash
+codex plugin marketplace upgrade eric-cross-harness-skills
+```
+
+For local testing from a checkout of this repository:
+
+```bash
+codex plugin marketplace add .
+```
+
+Then install or enable `cross-harness-skills` from the Codex plugin UI. Start a new Codex thread after installing or updating so the refreshed skill metadata is loaded.
 
 ## Add A Skill
 
