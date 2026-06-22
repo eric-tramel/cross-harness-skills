@@ -15,6 +15,22 @@ The repository is organized as a marketplace catalog with one initial plugin:
         └── skills/
 ```
 
+## Skill Inventory
+
+- `start-work`: start repository work with branch/worktree isolation and local guidance checks.
+- `crystallize`: turn rough work into an implementation-ready local plan.
+- `code-review`: coordinate delegated multi-persona review.
+- `code-review-elegance`: review for minimal design and simplification.
+- `code-review-idomatic`: review for language and repository idioms.
+- `code-review-correctness`: review for bugs, regressions, and edge cases.
+- `code-review-completeness`: review against stated objectives.
+- `code-review-security-review`: review for security risk.
+- `code-review-yagni`: review for overengineering.
+- `code-review-scope`: review for scope control.
+- `author-pr`: create ready-for-review GitHub pull requests.
+- `release`: cut and verify repository releases.
+- `cross-harness-skill-authoring`: create or adapt portable skills.
+
 ## Install
 
 ### Claude Code

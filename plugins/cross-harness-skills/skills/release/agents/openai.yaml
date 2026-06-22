@@ -1,0 +1,4 @@
+interface:
+  display_name: "Release"
+  short_description: "Cut and publish releases"
+  default_prompt: "/goal Use $cross-harness-skills:release to cut X.Y.Z, including version bump, release PR, tag, release notes, and artifact verification."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Author PR"
+  short_description: "Create consistent pull requests"
+  default_prompt: "Use $cross-harness-skills:author-pr to create a ready-for-review pull request."

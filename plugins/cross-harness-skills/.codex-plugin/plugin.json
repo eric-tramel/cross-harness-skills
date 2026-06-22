@@ -1,7 +1,7 @@
 {
   "name": "cross-harness-skills",
-  "version": "0.1.0",
-  "description": "Portable agent skills for use across Codex, Claude Code, and other harnesses.",
+  "version": "0.2.0",
+  "description": "Portable development-process skills for use across Codex, Claude Code, and other harnesses.",
   "author": {
     "name": "Eric Tramel",
     "email": "eric.tramel@gmail.com",
@@ -21,7 +21,7 @@
   "interface": {
     "displayName": "Cross Harness Skills",
     "shortDescription": "Portable development skills for agent harnesses.",
-    "longDescription": "Cross Harness Skills collects portable agent skills and packaging conventions that can be shared across Codex, Claude Code, and compatible local harnesses.",
+    "longDescription": "Cross Harness Skills collects portable development-process skills for starting work, crystallizing plans, running delegated code review personas, creating pull requests, cutting releases, and authoring portable skills across Codex, Claude Code, and compatible local harnesses.",
     "developerName": "Eric Tramel",
     "category": "Productivity",
     "capabilities": [
@@ -29,9 +29,9 @@
       "Write"
     ],
     "defaultPrompt": [
-      "Create a portable agent skill.",
-      "Adapt this skill for another harness.",
-      "Validate this plugin structure."
+      "Use $cross-harness-skills:start-work to begin a development task safely.",
+      "Use $cross-harness-skills:code-review to run a delegated multi-persona review.",
+      "Use $cross-harness-skills:author-pr to create a ready-for-review PR."
     ]
   }
 }

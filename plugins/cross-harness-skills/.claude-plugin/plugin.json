@@ -1,8 +1,8 @@
 {
   "name": "cross-harness-skills",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "displayName": "Cross Harness Skills",
-  "description": "Portable agent skills for use across Codex, Claude Code, and other harnesses.",
+  "description": "Portable development-process skills for use across Codex, Claude Code, and other harnesses.",
   "author": {
     "name": "Eric Tramel",
     "email": "eric.tramel@gmail.com"

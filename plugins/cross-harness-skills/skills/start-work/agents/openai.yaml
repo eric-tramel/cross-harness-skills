@@ -1,0 +1,4 @@
+interface:
+  display_name: "Start Work"
+  short_description: "Start isolated development work"
+  default_prompt: "Use $cross-harness-skills:start-work to start a development task safely."
