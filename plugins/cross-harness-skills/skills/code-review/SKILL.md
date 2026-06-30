@@ -40,6 +40,18 @@ Keep a mapping of persona to subagent session id. This mapping is part of the wo
 
 If the current harness has no callable subagent mechanism, stop before reviewing and report that the required delegated review wave is blocked by missing tooling. Do not silently substitute a manual single-agent review for this skill.
 
+### Capacity Fallback
+
+If subagent tooling exists but a spawn attempt fails because capacity is exhausted, an agent-thread limit is reached, or the harness rejects the parallel fan-out, keep the review running instead of dropping personas:
+
+1. Record which personas successfully spawned and which did not.
+2. Wait for the spawned reviewers to finish.
+3. Close or release finished reviewer sessions when the harness supports it.
+4. Spawn the remaining personas sequentially with the same raw review packet.
+5. Continue until every required persona has returned a result or the harness refuses even one-at-a-time execution.
+
+Treat one-at-a-time refusal as a blocked delegated review and report which personas were completed before the block. Do not summarize a partial wave as complete.
+
 ## Triage
 
 Wait for the first review wave to finish, then combine findings into one triage list.
