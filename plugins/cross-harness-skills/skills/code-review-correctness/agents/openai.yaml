@@ -1,4 +1,4 @@
 interface:
   display_name: "CodeReviewCorrectness"
-  short_description: "Review code for bugs and correctness"
-  default_prompt: "Use $cross-harness-skills:code-review-correctness to review this PR for bugs."
+  short_description: "Review code for behavioral bugs and contract regressions"
+  default_prompt: "Use $cross-harness-skills:code-review-correctness to review this PR for behavioral correctness, edge cases, data/API contracts, and tests that would catch real failures."

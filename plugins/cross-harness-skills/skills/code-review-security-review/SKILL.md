@@ -11,19 +11,41 @@ Review for security risk. Assume accidental vulnerabilities are more likely than
 
 ## Focus
 
-- Check inputs that cross trust boundaries: user text, config, file paths, environment variables, HTTP data, database rows, and tool output.
+- Start from the PR objective, changed files, and review packet. Identify the
+  actual trust boundaries before reporting findings.
+- Check inputs that cross trust boundaries: user text, config, file paths,
+  environment variables, HTTP data, database rows, CI data, and tool output.
 - Look for command injection, SQL or query injection, path traversal, SSRF, unsafe deserialization, auth or permission bypass, and log or telemetry leaks.
+- Check command and execution surfaces: shell wrappers, environment expansion,
+  relative executable resolution, `PATH` dependence, working directories,
+  generated scripts, CI workflows, plugin launchers, and downloaded or unpacked
+  artifacts.
+- Check security controls for bypass knobs: allowlists, disable flags, debug
+  modes, fallback paths, per-backend routing, and config that can skip
+  redaction, validation, auth checks, permission checks, logging, or telemetry
+  safeguards.
+- Check secret storage and egress paths, including durable logs, telemetry,
+  audit rows, error or quarantine tables, raw fragments, exception dumps, and
+  backend-specific outputs.
 - Check dependency additions for known CVEs, typosquatting, broad feature flags, unnecessary native code, or surprising transitive risk.
 - Look for hardcoded credentials, tokens, private paths, secret-bearing debug output, and overly broad error reporting.
 - Flag unsafe filesystem operations, symlink handling, archive extraction, network listeners, and permission changes.
 
 ## Non-Goals
 
-Do not demand enterprise security machinery for local-only developer tooling unless the changed code crosses a real trust boundary. Do not report theoretical risk without a plausible path.
+Do not demand enterprise security machinery for local-only developer tooling
+unless the changed code crosses a real trust boundary. Do not report
+theoretical risk without a plausible path.
+
+Do not dismiss a risk only because the code is developer tooling, local-only,
+or expected to run inside a harness. If the change executes workspace-controlled
+content, handles secrets, writes durable data, changes CI, launches plugins, or
+can bypass a harness check before that check runs, evaluate the concrete path.
 
 ## Output
 
-Lead with exploitable or sensitive findings. Include the attack or leak path:
+Lead with exploitable or sensitive findings. Include the attack or leak path,
+the trust boundary crossed, and the specific evidence:
 
 ```markdown
 - [P1] Reject absolute paths before opening trace files
@@ -33,4 +55,17 @@ Lead with exploitable or sensitive findings. Include the attack or leak path:
   Restrict reads to the configured watch root after canonicalization.
 ```
 
-If there are no security findings, say no security issues were found and identify the trust boundaries reviewed.
+Use severity this way:
+
+- `P1`: concrete secret exposure, auth or permission bypass, backdoor, remote or
+  CI command execution, or security control bypass with broad blast radius.
+- `P2`: plausible local command execution, durable secret leak, dependency or
+  launcher risk, or bypass of a security control in a narrower path.
+- `P3`: lower-impact hardening where the exploit path is limited but real.
+- Residual risk: uncertain or speculative concerns that are worth naming but
+  should not be reported as findings.
+
+If there are no security findings, say no security issues were found, identify
+the trust boundaries reviewed, and name any sensitive paths that stayed
+unchanged. For follow-up reviews, re-check only the accepted or disputed
+security concern and state whether the original path is closed.

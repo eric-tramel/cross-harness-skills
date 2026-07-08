@@ -1,4 +1,4 @@
 interface:
   display_name: "CodeReviewElegance"
-  short_description: "Review code for elegant minimal design"
-  default_prompt: "Use $cross-harness-skills:code-review-elegance to review this PR for elegant minimal design."
+  short_description: "Review code for minimal design and drift-free invariants"
+  default_prompt: "Use $cross-harness-skills:code-review-elegance to review this PR for minimal design, clear invariants, and avoidable complexity."
