@@ -1,4 +1,4 @@
 interface:
   display_name: "CodeReviewSecurityReview"
-  short_description: "Review code for security risks"
-  default_prompt: "Use $cross-harness-skills:code-review-security-review to review this PR for security risks."
+  short_description: "Review code for exploitable security and secret-leak risks"
+  default_prompt: "Use $cross-harness-skills:code-review-security-review to review this PR for security risks, focusing on trust boundaries, command execution, secret storage or egress, and security-control bypasses."

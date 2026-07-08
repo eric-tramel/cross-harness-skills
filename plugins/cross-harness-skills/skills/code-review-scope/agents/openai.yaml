@@ -1,4 +1,4 @@
 interface:
   display_name: "CodeReviewScope"
-  short_description: "Review code for scope control"
-  default_prompt: "Use $cross-harness-skills:code-review-scope to review whether this PR stays in scope."
+  short_description: "Review code for scope and disclosure control"
+  default_prompt: "Use $cross-harness-skills:code-review-scope to compare the stated objective and linked issue or PR body against the diff, then report only scope crossings, split or narrowing needs, and required disclosure gaps."
