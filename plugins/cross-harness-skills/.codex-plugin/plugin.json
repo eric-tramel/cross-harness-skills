@@ -21,7 +21,7 @@
   "interface": {
     "displayName": "Cross Harness Skills",
     "shortDescription": "Portable development skills for agent harnesses.",
-    "longDescription": "Cross Harness Skills collects portable development-process skills for starting work, crystallizing plans, running delegated code review personas, creating pull requests, cutting releases, and authoring portable skills across Codex, Claude Code, and compatible local harnesses.",
+    "longDescription": "Cross Harness Skills collects portable development-process skills for starting work, crystallizing plans, running delegated code review personas, auditing and improving review personas from session history, creating pull requests, cutting releases, and authoring portable skills across Codex, Claude Code, and compatible local harnesses.",
     "developerName": "Eric Tramel",
     "category": "Productivity",
     "capabilities": [
@@ -31,6 +31,7 @@
     "defaultPrompt": [
       "Use $cross-harness-skills:start-work to begin a development task safely.",
       "Use $cross-harness-skills:code-review to run a delegated multi-persona review.",
+      "Use $cross-harness-skills:code-review-agent-audit to audit and improve a review persona.",
       "Use $cross-harness-skills:author-pr to create a ready-for-review PR."
     ]
   }

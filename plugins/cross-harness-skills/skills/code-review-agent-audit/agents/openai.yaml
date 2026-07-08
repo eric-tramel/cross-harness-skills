@@ -1,0 +1,4 @@
+interface:
+  display_name: "Code Review Agent Audit"
+  short_description: "Audit and improve review personas"
+  default_prompt: "Use $cross-harness-skills:code-review-agent-audit to audit this review persona using session history and improve its skill definition."

@@ -20,6 +20,7 @@ The repository is organized as a marketplace catalog with one initial plugin:
 - `start-work`: start repository work with branch/worktree isolation and local guidance checks.
 - `crystallize`: turn rough work into an implementation-ready local plan.
 - `code-review`: coordinate delegated multi-persona review.
+- `code-review-agent-audit`: audit and improve code-review personas from session history.
 - `code-review-elegance`: review for minimal design and simplification.
 - `code-review-idomatic`: review for language and repository idioms.
 - `code-review-correctness`: review for bugs, regressions, and edge cases.
