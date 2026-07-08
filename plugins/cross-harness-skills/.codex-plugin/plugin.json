@@ -1,6 +1,6 @@
 {
   "name": "cross-harness-skills",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Portable development-process skills for use across Codex, Claude Code, and other harnesses.",
   "author": {
     "name": "Eric Tramel",
