@@ -23,12 +23,21 @@ Launch exactly one delegated subagent for each persona:
 - `$cross-harness-skills:code-review-yagni`
 - `$cross-harness-skills:code-review-scope`
 
+Each reviewer is a terminal leaf in the agent graph. In every initial and
+follow-up prompt, explicitly instruct the reviewer to perform the review itself
+and not spawn, delegate to, or call child agents, reviewer agents, scouts, or
+other subagents. Reviewers may inspect files and run ordinary tools directly,
+but they must report limitations or residual risk instead of delegating any
+research, validation, or synthesis. Do not grant reviewers permission to launch
+children.
+
 Give each reviewer the same raw review packet: PR description, cited issue or objective, relevant diff, changed files, validation results, and any constraints from the user. Do not include your intended fix or your private diagnosis in the prompt.
 
 Use prompts shaped like:
 
 ```text
 Use $cross-harness-skills:code-review-correctness to review this PR. Focus only on your persona's facet.
+Act as a terminal reviewer: perform the review yourself and do not spawn, delegate to, or call child agents or reviewers.
 Return findings first, with severity and file/line references when available.
 If there are no findings, say so and mention residual risk.
 
@@ -81,6 +90,7 @@ Example follow-up prompt:
 
 ```text
 Follow-up on your CodeReviewScope finding about unrelated docs churn.
+Continue as a terminal reviewer and do not call child agents or reviewers.
 I removed the unrelated docs changes and kept only the authentication fix.
 Please re-check only that scope concern against this updated diff:
 <small diff or file references>
