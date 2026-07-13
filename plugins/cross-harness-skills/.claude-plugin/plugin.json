@@ -1,6 +1,6 @@
 {
   "name": "cross-harness-skills",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "displayName": "Cross Harness Skills",
   "description": "Portable development-process skills for use across Codex, Claude Code, and other harnesses.",
   "author": {
