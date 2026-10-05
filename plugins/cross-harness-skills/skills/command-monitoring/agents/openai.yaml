@@ -1,0 +1,4 @@
+interface:
+  display_name: "Command Monitoring"
+  short_description: "Manage long-running commands"
+  default_prompt: "Use $cross-harness-skills:command-monitoring to run and monitor this long-running command safely."
