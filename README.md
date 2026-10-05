@@ -18,6 +18,7 @@ The repository is organized as a marketplace catalog with one initial plugin:
 ## Skill Inventory
 
 - `start-work`: start repository work with branch/worktree isolation and local guidance checks.
+- `command-monitoring`: run, observe, and clean up long-running commands without blocking the harness.
 - `crystallize`: turn rough work into an implementation-ready local plan.
 - `code-review`: coordinate delegated multi-persona review.
 - `code-review-agent-audit`: audit and improve code-review personas from session history.
